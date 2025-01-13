@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://c1hrlwuxlcase"]
+[gd_scene load_steps=7 format=3 uid="uid://c1hrlwuxlcase"]
 
 [ext_resource type="FontFile" uid="uid://dtgvaqnh8efmm" path="res://Daneehand Regular Cyr.ttf" id="1_amljv"]
 [ext_resource type="Script" path="res://level_1_2d.gd" id="1_ghmra"]
@@ -19,6 +19,9 @@ corner_radius_bottom_left = 28
 shadow_color = Color(0.110212, 0.608482, 0.865095, 1)
 shadow_size = 7
 shadow_offset = Vector2(58, 34)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2s6i1"]
+bg_color = Color(0, 0.48691, 0.637188, 1)
 
 [node name="level_1_2d" type="Node2D"]
 script = ExtResource("1_ghmra")
@@ -49,9 +52,11 @@ offset_right = 1046.0
 offset_bottom = 227.0
 pivot_offset = Vector2(20, 9)
 theme_override_colors/font_focus_color = Color(0.980392, 0.929412, 0.411765, 1)
-theme_override_colors/font_color = Color(0.906228, 0.062452, 0.279065, 1)
+theme_override_colors/font_color = Color(0.992157, 0.913725, 0.0627451, 1)
 theme_override_constants/align_to_largest_stylebox = 18
 theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_2s6i1")
+button_mask = 3
 text = "button 2"
 script = ExtResource("3_w3j7l")
 
