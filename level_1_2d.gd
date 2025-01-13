@@ -1,3 +1,4 @@
+# получаем главный узел сцены
 extends Node2D
 
 
@@ -16,7 +17,7 @@ func _on_button_pressed() -> void:
 	#num = "2"
 	num += 1
 	
-	
+	# получаем другой узел
 	#var but_2 = get_node("Button2")
 	var but_2:BaseButton = get_node("Button2")
 	but_2.position.x = 800

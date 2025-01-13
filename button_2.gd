@@ -1,5 +1,5 @@
 
-# получаем главный узел сцены
+# получаем узел сцены
 extends Button
 
 
@@ -29,11 +29,11 @@ func _on_pressed() -> void:
 	#for i in range(10):
 		#print(i)
 	
-	# два способа изминить цвет текста
+	# два способа изменить цвет текста
 	set("theme_override_colors/font_color" , "#00FFFF")
 	add_theme_color_override("font_focus_color" ,"#8B00FF")
 
-	
+	# меняем style
 	var new_style = StyleBoxFlat.new()
 	new_style.bg_color = "#FF7518"
 	set("theme_override_styles/normal" , new_style)
