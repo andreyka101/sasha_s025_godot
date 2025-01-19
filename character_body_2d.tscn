@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://b6fu1rmf3lwu4"]
+
+[ext_resource type="Texture2D" uid="uid://dp0vtw1jj2yj" path="res://Sprite-0003.png" id="1_hhwq2"]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(5.68434e-14, 2.38419e-07)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("1_hhwq2")
