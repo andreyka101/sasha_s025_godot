@@ -75,5 +75,14 @@ text = "click"
 icon_alignment = 1
 vertical_icon_alignment = 2
 
+[node name="TextEdit" type="TextEdit" parent="."]
+offset_left = 192.0
+offset_top = 438.0
+offset_right = 488.0
+offset_bottom = 526.0
+theme_override_font_sizes/font_size = 33
+text = " текст"
+placeholder_text = "hello"
+
 [connection signal="pressed" from="Button2" to="Button2" method="_on_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
