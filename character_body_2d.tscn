@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [gd_scene load_steps=43 format=3 uid="uid://b6fu1rmf3lwu4"]
 
 [ext_resource type="Script" path="res://character_body_2d.gd" id="1_8bl73"]
@@ -5,11 +6,18 @@
 [ext_resource type="Texture2D" uid="uid://cxevf6gja6pkr" path="res://120x80_PNGSheets/_Roll.png" id="2_f5ift"]
 [ext_resource type="Texture2D" uid="uid://dv2kxagyqpk7w" path="res://120x80_PNGSheets/_Jump.png" id="4_guj85"]
 [ext_resource type="Texture2D" uid="uid://c5vakxmslcu2i" path="res://120x80_PNGSheets/_Run.png" id="5_h6nw8"]
+=======
+[gd_scene load_steps=15 format=3 uid="uid://b6fu1rmf3lwu4"]
+
+[ext_resource type="Script" path="res://character_body_2d.gd" id="1_8bl73"]
+[ext_resource type="Texture2D" uid="uid://b3jmr0l73y4ye" path="res://120x80_PNGSheets/_Idle.png" id="2_bg3qf"]
+>>>>>>> ee3158d2d7d314dbcef64c4933f4bb08f7d35f1a
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n66vx"]
 radius = 30.0
 height = 112.0
 
+<<<<<<< HEAD
 [sub_resource type="AtlasTexture" id="AtlasTexture_mva4m"]
 atlas = ExtResource("2_f5ift")
 region = Rect2(0, 0, 120, 80)
@@ -58,6 +66,8 @@ region = Rect2(1200, 0, 120, 80)
 atlas = ExtResource("2_f5ift")
 region = Rect2(1320, 0, 120, 80)
 
+=======
+>>>>>>> ee3158d2d7d314dbcef64c4933f4bb08f7d35f1a
 [sub_resource type="AtlasTexture" id="AtlasTexture_fsd8r"]
 atlas = ExtResource("2_bg3qf")
 region = Rect2(0, 0, 120, 80)
@@ -98,6 +108,7 @@ region = Rect2(960, 0, 120, 80)
 atlas = ExtResource("2_bg3qf")
 region = Rect2(1080, 0, 120, 80)
 
+<<<<<<< HEAD
 [sub_resource type="AtlasTexture" id="AtlasTexture_2lt5h"]
 atlas = ExtResource("4_guj85")
 region = Rect2(0, 0, 120, 80)
@@ -150,10 +161,13 @@ region = Rect2(960, 0, 120, 80)
 atlas = ExtResource("5_h6nw8")
 region = Rect2(1080, 0, 120, 80)
 
+=======
+>>>>>>> ee3158d2d7d314dbcef64c4933f4bb08f7d35f1a
 [sub_resource type="SpriteFrames" id="SpriteFrames_wd6m5"]
 animations = [{
 "frames": [{
 "duration": 1.0,
+<<<<<<< HEAD
 "texture": SubResource("AtlasTexture_mva4m")
 }, {
 "duration": 1.0,
@@ -195,6 +209,8 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+=======
+>>>>>>> ee3158d2d7d314dbcef64c4933f4bb08f7d35f1a
 "texture": SubResource("AtlasTexture_fsd8r")
 }, {
 "duration": 1.0,
@@ -228,6 +244,7 @@ animations = [{
 "name": &"anime_idel",
 "speed": 10.0
 }, {
+<<<<<<< HEAD
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_2lt5h")
@@ -276,6 +293,12 @@ animations = [{
 "loop": true,
 "name": &"anime_run",
 "speed": 10.0
+=======
+"frames": [],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+>>>>>>> ee3158d2d7d314dbcef64c4933f4bb08f7d35f1a
 }]
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
@@ -286,9 +309,18 @@ shape = SubResource("CapsuleShape2D_n66vx")
 debug_color = Color(2.69532e-06, 0.583343, 0.787044, 0.42)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+<<<<<<< HEAD
 position = Vector2(-1, -59)
 scale = Vector2(2.9, 2.9)
 sprite_frames = SubResource("SpriteFrames_wd6m5")
 animation = &"anime_jump"
 autoplay = "anime_idel"
 frame_progress = 0.183061
+=======
+position = Vector2(15, -62)
+scale = Vector2(2.9, 2.9)
+sprite_frames = SubResource("SpriteFrames_wd6m5")
+animation = &"anime_idel"
+autoplay = "anime_idel"
+frame_progress = 0.374361
+>>>>>>> ee3158d2d7d314dbcef64c4933f4bb08f7d35f1a
