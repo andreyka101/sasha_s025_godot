@@ -1,9 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://c1hrlwuxlcase"]
+[gd_scene load_steps=13 format=3 uid="uid://c1hrlwuxlcase"]
 
 [ext_resource type="FontFile" uid="uid://dtgvaqnh8efmm" path="res://Daneehand Regular Cyr.ttf" id="1_amljv"]
 [ext_resource type="Script" path="res://level_1_2d.gd" id="1_ghmra"]
 [ext_resource type="Texture2D" uid="uid://b4qh0cawtr5se" path="res://icon.svg" id="2_rnu38"]
 [ext_resource type="Script" path="res://button_2.gd" id="3_w3j7l"]
+[ext_resource type="Texture2D" uid="uid://dvohotultkus4" path="res://checked.png" id="5_uysng"]
+[ext_resource type="Texture2D" uid="uid://bhb021q6o2sk7" path="res://unchecked.png" id="6_fcwki"]
+[ext_resource type="PackedScene" uid="uid://b6fu1rmf3lwu4" path="res://character_body_2d.tscn" id="7_yjkaj"]
+[ext_resource type="PackedScene" uid="uid://dkhhdttn65mrv" path="res://static_body_2d.tscn" id="8_6n6r4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wib85"]
 bg_color = Color(0.405186, 1, 0.703371, 1)
@@ -22,6 +26,12 @@ shadow_offset = Vector2(58, 34)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2s6i1"]
 bg_color = Color(0, 0.48691, 0.637188, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8vdpe"]
+bg_color = Color(0.558476, 0.525718, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a8ppw"]
+bg_color = Color(0, 0.691071, 0.654286, 1)
 
 [node name="level_1_2d" type="Node2D"]
 script = ExtResource("1_ghmra")
@@ -46,10 +56,10 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Button2" type="Button" parent="."]
-offset_left = 794.0
-offset_top = 77.0
-offset_right = 1046.0
-offset_bottom = 227.0
+offset_left = 886.0
+offset_top = 30.0
+offset_right = 1138.0
+offset_bottom = 180.0
 pivot_offset = Vector2(20, 9)
 theme_override_colors/font_focus_color = Color(0.980392, 0.929412, 0.411765, 1)
 theme_override_colors/font_color = Color(0.992157, 0.913725, 0.0627451, 1)
@@ -76,13 +86,57 @@ icon_alignment = 1
 vertical_icon_alignment = 2
 
 [node name="TextEdit" type="TextEdit" parent="."]
-offset_left = 192.0
-offset_top = 438.0
-offset_right = 488.0
-offset_bottom = 526.0
+offset_left = 34.0
+offset_top = 288.0
+offset_right = 330.0
+offset_bottom = 376.0
 theme_override_font_sizes/font_size = 33
 text = " текст"
 placeholder_text = "hello"
 
+[node name="CheckButton" type="CheckButton" parent="."]
+offset_left = 813.0
+offset_top = 196.0
+offset_right = 1059.0
+offset_bottom = 332.0
+theme_override_font_sizes/font_size = 22
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8vdpe")
+theme_override_styles/normal = SubResource("StyleBoxFlat_a8ppw")
+theme_override_icons/checked = ExtResource("2_rnu38")
+button_pressed = true
+text = "cefefeffeef"
+alignment = 2
+icon_alignment = 2
+
+[node name="CheckBox" type="CheckBox" parent="."]
+offset_left = 919.0
+offset_top = 363.0
+offset_right = 1072.0
+offset_bottom = 431.0
+theme_override_icons/checked = ExtResource("5_uysng")
+theme_override_icons/unchecked = ExtResource("6_fcwki")
+text = "fefefefefef"
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("7_yjkaj")]
+position = Vector2(379, 305)
+rotation = -0.00593446
+
+[node name="StaticBody2D5" parent="." instance=ExtResource("8_6n6r4")]
+position = Vector2(1440, 475)
+
+[node name="StaticBody2D" parent="." instance=ExtResource("8_6n6r4")]
+position = Vector2(174, 587)
+
+[node name="StaticBody2D2" parent="." instance=ExtResource("8_6n6r4")]
+position = Vector2(1251, 588)
+
+[node name="StaticBody2D3" parent="." instance=ExtResource("8_6n6r4")]
+position = Vector2(894, 590)
+
+[node name="StaticBody2D4" parent="." instance=ExtResource("8_6n6r4")]
+position = Vector2(538, 590)
+
 [connection signal="pressed" from="Button2" to="Button2" method="_on_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="text_changed" from="TextEdit" to="." method="_on_text_edit_text_changed"]
+[connection signal="pressed" from="CheckButton" to="." method="_on_check_button_pressed"]
