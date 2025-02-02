@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://button_2.gd" id="3_w3j7l"]
 [ext_resource type="Texture2D" uid="uid://dvohotultkus4" path="res://checked.png" id="5_uysng"]
 [ext_resource type="Texture2D" uid="uid://bhb021q6o2sk7" path="res://unchecked.png" id="6_fcwki"]
-[ext_resource type="PackedScene" uid="uid://b6fu1rmf3lwu4" path="res://character_body_2d.tscn" id="7_yjkaj"]
+[ext_resource type="PackedScene" path="res://character_body_2d.tscn" id="7_yjkaj"]
 [ext_resource type="PackedScene" uid="uid://dkhhdttn65mrv" path="res://static_body_2d.tscn" id="8_6n6r4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wib85"]
