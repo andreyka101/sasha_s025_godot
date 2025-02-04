@@ -28,19 +28,20 @@ func _process(delta: float) -> void:
 
 	# движение игрока влево или право 
 	if(Input.is_action_pressed("key_left") and velocity.y == 0):
-		#position.x -= 400 * delta
+		# движение через position
 		#self.position.x -= 400 * delta
-		
+		# движение через velocity
 		velocity.x = -400
-		
+		# переворачиваем спрайт
 		sprite.flip_h = true
 		sprite.play("anime_run")
 		
 	elif(Input.is_action_pressed("key_right") and velocity.y == 0):
+		# движение через position
 		#position.x += 400 * delta
-		
+		# движение через velocity
 		velocity.x = 400
-		
+		# переворачиваем спрайт
 		sprite.flip_h = false
 		sprite.play("anime_run")
 	
@@ -51,7 +52,7 @@ func _process(delta: float) -> void:
 
 		
 		
-		
+	# прыжок игрока через position 
 	#if(Input.is_action_just_pressed("key_up")):
 		#position.y = 300
 		#num_jump = 900
@@ -61,16 +62,18 @@ func _process(delta: float) -> void:
 		
 	
 	
+	# прыжок игрока через velocity
 	if(velocity.y != 0):
 		sprite.play("anime_flight")
-	
-	
 	if(Input.is_action_pressed("key_up") and is_on_floor()):
 		#sprite.play("anime_jump")
 		velocity.y = -600
 		
 	
+
+	# скорость по y 
 	print(velocity.y)
+
 
 	# включаем гравитацию если игрок не стоит на земле
 	#print(is_on_floor())
@@ -86,7 +89,10 @@ func _process(delta: float) -> void:
 	
 	
 	if(Input.is_action_just_pressed("key_teleport_t")):
+		# position - меняет координаты в следующий кадр
 		#position.x = 400
+
+		# velocity - постоянная скорость объекта
 		velocity.x = 200
 	
 	
