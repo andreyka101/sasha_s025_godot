@@ -2,12 +2,18 @@ extends CharacterBody2D
 
 
 @onready var sprite:AnimatedSprite2D = get_node("AnimatedSprite2D")
+@onready var camera:Camera2D = $Camera2D
+@onready var label_coin:Label = $"../CanvasLayer/Label_coin"
 
-var num_jump = 0
+
+var num_jump:int = 0
+var num_coin:int = 0
+
 
 
 # метод _process - вызывается с каждым тактом процессора нужна для вычисления чего либо
 func _process(delta: float) -> void:
+	#label_coin.text = "coin " + str(num_coin)
 	#print("hi")
 	#print(position)
 	#position.x += 2
@@ -27,7 +33,7 @@ func _process(delta: float) -> void:
 	
 
 	# движение игрока влево или право 
-	if(Input.is_action_pressed("key_left") and velocity.y == 0):
+	if(Input.is_action_pressed("key_left")):
 		# движение через position
 		#self.position.x -= 400 * delta
 		# движение через velocity
@@ -36,7 +42,9 @@ func _process(delta: float) -> void:
 		sprite.flip_h = true
 		sprite.play("anime_run")
 		
-	elif(Input.is_action_pressed("key_right") and velocity.y == 0):
+		camera.rotation = -3 * delta
+		
+	elif(Input.is_action_pressed("key_right")):
 		# движение через position
 		#position.x += 400 * delta
 		# движение через velocity
@@ -44,12 +52,14 @@ func _process(delta: float) -> void:
 		# переворачиваем спрайт
 		sprite.flip_h = false
 		sprite.play("anime_run")
+		
+		camera.rotation = 3 * delta
 	
 	else :
 		velocity.x = 0
-		if(velocity.y == 0):
-			sprite.play("anime_idel")
+		sprite.play("anime_idel")
 
+		camera.rotation = 0
 		
 		
 	# прыжок игрока через position 
@@ -62,17 +72,19 @@ func _process(delta: float) -> void:
 		
 	
 	
-	# прыжок игрока через velocity
-	if(velocity.y != 0):
+	
+	if(velocity.y > 0):
 		sprite.play("anime_flight")
+	if(velocity.y < 0):
+		sprite.play("anime_jump")
+	# прыжок игрока через velocity
 	if(Input.is_action_pressed("key_up") and is_on_floor()):
-		#sprite.play("anime_jump")
-		velocity.y = -600
+		velocity.y = -700
 		
 	
 
 	# скорость по y 
-	print(velocity.y)
+	#print(velocity.y)
 
 
 	# включаем гравитацию если игрок не стоит на земле

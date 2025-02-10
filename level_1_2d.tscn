@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c1hrlwuxlcase"]
+[gd_scene load_steps=14 format=3 uid="uid://c1hrlwuxlcase"]
 
 [ext_resource type="FontFile" uid="uid://dtgvaqnh8efmm" path="res://Daneehand Regular Cyr.ttf" id="1_amljv"]
 [ext_resource type="Script" path="res://level_1_2d.gd" id="1_ghmra"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bhb021q6o2sk7" path="res://unchecked.png" id="6_fcwki"]
 [ext_resource type="PackedScene" uid="uid://b6fu1rmf3lwu4" path="res://character_body_2d.tscn" id="7_yjkaj"]
 [ext_resource type="PackedScene" uid="uid://dkhhdttn65mrv" path="res://static_body_2d.tscn" id="8_6n6r4"]
+[ext_resource type="PackedScene" uid="uid://ciomtubgsvi6s" path="res://area_2d_coin.tscn" id="9_f1g0g"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wib85"]
 bg_color = Color(0.405186, 1, 0.703371, 1)
@@ -125,7 +126,7 @@ rotation = -0.00593446
 position = Vector2(1440, 475)
 
 [node name="StaticBody2D" parent="." instance=ExtResource("8_6n6r4")]
-position = Vector2(174, 587)
+position = Vector2(179, 590)
 
 [node name="StaticBody2D2" parent="." instance=ExtResource("8_6n6r4")]
 position = Vector2(1251, 588)
@@ -135,6 +136,57 @@ position = Vector2(894, 590)
 
 [node name="StaticBody2D4" parent="." instance=ExtResource("8_6n6r4")]
 position = Vector2(538, 590)
+
+[node name="StaticBody2D6" parent="." instance=ExtResource("8_6n6r4")]
+position = Vector2(1630, 598)
+
+[node name="StaticBody2D7" parent="." instance=ExtResource("8_6n6r4")]
+position = Vector2(2345, 598)
+
+[node name="StaticBody2D8" parent="." instance=ExtResource("8_6n6r4")]
+position = Vector2(1988, 598)
+
+[node name="StaticBody2D9" parent="." instance=ExtResource("8_6n6r4")]
+position = Vector2(-96, 322)
+rotation = 1.5708
+
+[node name="Area2D_coin" parent="." instance=ExtResource("9_f1g0g")]
+position = Vector2(599, 460)
+
+[node name="Area2D_coin2" parent="." instance=ExtResource("9_f1g0g")]
+position = Vector2(817, 437)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label_coin" type="Label" parent="CanvasLayer"]
+offset_right = 212.0
+offset_bottom = 84.0
+theme_override_colors/font_color = Color(1, 0.8, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 0
+theme_override_constants/outline_size = 11
+theme_override_font_sizes/font_size = 45
+text = "coin 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Area2D_coin3" parent="." instance=ExtResource("9_f1g0g")]
+position = Vector2(176, 437)
+
+[node name="Area2D_coin4" parent="." instance=ExtResource("9_f1g0g")]
+position = Vector2(1248, 309)
+
+[node name="Area2D_coin5" parent="." instance=ExtResource("9_f1g0g")]
+position = Vector2(1441, 122)
+
+[node name="Area2D_coin6" parent="." instance=ExtResource("9_f1g0g")]
+position = Vector2(1702, 349)
+
+[node name="Area2D_coin7" parent="." instance=ExtResource("9_f1g0g")]
+position = Vector2(2023, 397)
+
+[node name="Area2D_coin8" parent="." instance=ExtResource("9_f1g0g")]
+position = Vector2(2390, 383)
 
 [connection signal="pressed" from="Button2" to="Button2" method="_on_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -1,8 +1,8 @@
-[gd_scene load_steps=43 format=3 uid="uid://b6fu1rmf3lwu4"]
+[gd_scene load_steps=34 format=3 uid="uid://b6fu1rmf3lwu4"]
 
 [ext_resource type="Script" path="res://character_body_2d.gd" id="1_8bl73"]
+[ext_resource type="Texture2D" uid="uid://bopm0xdxfaihs" path="res://120x80_PNGSheets/_Fall.png" id="2_a72w3"]
 [ext_resource type="Texture2D" uid="uid://b3jmr0l73y4ye" path="res://120x80_PNGSheets/_Idle.png" id="2_bg3qf"]
-[ext_resource type="Texture2D" uid="uid://cxevf6gja6pkr" path="res://120x80_PNGSheets/_Roll.png" id="2_f5ift"]
 [ext_resource type="Texture2D" uid="uid://dv2kxagyqpk7w" path="res://120x80_PNGSheets/_Jump.png" id="4_guj85"]
 [ext_resource type="Texture2D" uid="uid://c5vakxmslcu2i" path="res://120x80_PNGSheets/_Run.png" id="5_h6nw8"]
 
@@ -10,53 +10,17 @@
 radius = 30.0
 height = 112.0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mva4m"]
-atlas = ExtResource("2_f5ift")
+[sub_resource type="AtlasTexture" id="AtlasTexture_g6jj6"]
+atlas = ExtResource("2_a72w3")
 region = Rect2(0, 0, 120, 80)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6ttfq"]
-atlas = ExtResource("2_f5ift")
+[sub_resource type="AtlasTexture" id="AtlasTexture_s1n7k"]
+atlas = ExtResource("2_a72w3")
 region = Rect2(120, 0, 120, 80)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6mrwn"]
-atlas = ExtResource("2_f5ift")
+[sub_resource type="AtlasTexture" id="AtlasTexture_x2n33"]
+atlas = ExtResource("2_a72w3")
 region = Rect2(240, 0, 120, 80)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qj0n6"]
-atlas = ExtResource("2_f5ift")
-region = Rect2(360, 0, 120, 80)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_es85n"]
-atlas = ExtResource("2_f5ift")
-region = Rect2(480, 0, 120, 80)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_v7hyd"]
-atlas = ExtResource("2_f5ift")
-region = Rect2(600, 0, 120, 80)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_u26kp"]
-atlas = ExtResource("2_f5ift")
-region = Rect2(720, 0, 120, 80)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_18ija"]
-atlas = ExtResource("2_f5ift")
-region = Rect2(840, 0, 120, 80)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_o2plu"]
-atlas = ExtResource("2_f5ift")
-region = Rect2(960, 0, 120, 80)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_i6ory"]
-atlas = ExtResource("2_f5ift")
-region = Rect2(1080, 0, 120, 80)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yokm0"]
-atlas = ExtResource("2_f5ift")
-region = Rect2(1200, 0, 120, 80)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jnh6h"]
-atlas = ExtResource("2_f5ift")
-region = Rect2(1320, 0, 120, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fsd8r"]
 atlas = ExtResource("2_bg3qf")
@@ -154,40 +118,13 @@ region = Rect2(1080, 0, 120, 80)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_mva4m")
+"texture": SubResource("AtlasTexture_g6jj6")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_6ttfq")
+"texture": SubResource("AtlasTexture_s1n7k")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_6mrwn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qj0n6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_es85n")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_v7hyd")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_u26kp")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_18ija")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_o2plu")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_i6ory")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_yokm0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jnh6h")
+"texture": SubResource("AtlasTexture_x2n33")
 }],
 "loop": true,
 "name": &"anime_flight",
@@ -291,4 +228,21 @@ scale = Vector2(2.8125, 2.8125)
 sprite_frames = SubResource("SpriteFrames_wd6m5")
 animation = &"anime_flight"
 autoplay = "anime_idel"
-frame_progress = 0.163059
+frame_progress = 0.686222
+
+[node name="Camera2D" type="Camera2D" parent="."]
+ignore_rotation = false
+limit_left = 0
+limit_bottom = 650
+position_smoothing_enabled = true
+position_smoothing_speed = 1.0
+rotation_smoothing_enabled = true
+rotation_smoothing_speed = 1.0
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_left_margin = 0.0
+drag_top_margin = 0.5
+drag_right_margin = 0.0
+drag_bottom_margin = 0.3
+editor_draw_limits = true
+editor_draw_drag_margin = true
