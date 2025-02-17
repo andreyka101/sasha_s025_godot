@@ -1,10 +1,11 @@
-[gd_scene load_steps=34 format=3 uid="uid://b6fu1rmf3lwu4"]
+[gd_scene load_steps=35 format=3 uid="uid://b6fu1rmf3lwu4"]
 
 [ext_resource type="Script" path="res://character_body_2d.gd" id="1_8bl73"]
 [ext_resource type="Texture2D" uid="uid://bopm0xdxfaihs" path="res://120x80_PNGSheets/_Fall.png" id="2_a72w3"]
 [ext_resource type="Texture2D" uid="uid://b3jmr0l73y4ye" path="res://120x80_PNGSheets/_Idle.png" id="2_bg3qf"]
 [ext_resource type="Texture2D" uid="uid://dv2kxagyqpk7w" path="res://120x80_PNGSheets/_Jump.png" id="4_guj85"]
 [ext_resource type="Texture2D" uid="uid://c5vakxmslcu2i" path="res://120x80_PNGSheets/_Run.png" id="5_h6nw8"]
+[ext_resource type="AudioStream" uid="uid://bvfw3jpffunmp" path="res://coin_sound.mp3" id="6_do22s"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n66vx"]
 radius = 30.0
@@ -246,3 +247,6 @@ drag_right_margin = 0.0
 drag_bottom_margin = 0.3
 editor_draw_limits = true
 editor_draw_drag_margin = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_do22s")

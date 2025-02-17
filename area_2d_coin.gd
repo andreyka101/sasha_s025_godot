@@ -1,6 +1,9 @@
 extends Area2D
 
 
+
+
+
 # сигнал срабатывает когда сцена входит в Area2D_coin
 func _on_body_entered(body: Node2D) -> void:
 	# body - сцена которая вошла
@@ -14,6 +17,11 @@ func _on_body_entered(body: Node2D) -> void:
 		body.num_coin += 1
 		body.label_coin.text = "coin " + str(body.num_coin)
 		
+		
+		
+		#body.audio_coin.play()
+		body.audio_coin.playing = true
+	
 		
 		
 		# удаляем эту сцену

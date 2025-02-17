@@ -9,6 +9,15 @@ var num = 5
 
 # @onready - создаёт переменную только после прогрузки сцены
 @onready var label_start:Label = $Label
+@onready var lab_slid = $Label_slider
+# VSlider - ползунок 
+@onready var slider:VSlider = $VSlider
+
+
+
+func _process(delta: float) -> void:
+	# получаем значение ползунка и выводим через label
+	lab_slid.text = str(slider.value)
 
 
 

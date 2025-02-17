@@ -4,6 +4,7 @@ extends CharacterBody2D
 @onready var sprite:AnimatedSprite2D = get_node("AnimatedSprite2D")
 @onready var camera:Camera2D = $Camera2D
 @onready var label_coin:Label = $"../CanvasLayer/Label_coin"
+@onready var audio_coin:AudioStreamPlayer = $AudioStreamPlayer
 
 
 var num_jump:int = 0
