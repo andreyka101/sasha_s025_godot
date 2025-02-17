@@ -19,6 +19,7 @@ func _on_body_entered(body: Node2D) -> void:
 		
 		
 		
+		# запускаем аудио
 		#body.audio_coin.play()
 		body.audio_coin.playing = true
 	
