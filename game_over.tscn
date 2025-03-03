@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://8v4588qu6tf0"]
+
+[ext_resource type="Texture2D" uid="uid://c2vpb5onli61s" path="res://refresh.svg" id="1_63mhn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fmnqg"]
+bg_color = Color(1, 0.56955, 0.152344, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_senko"]
+bg_color = Color(1, 1, 1, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fggoa"]
+bg_color = Color(0.29, 0.145, 0.145, 0)
+
+[node name="Game_over" type="Node2D"]
+
+[node name="Label_background" type="Label" parent="."]
+offset_right = 1157.0
+offset_bottom = 650.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_fmnqg")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 379.0
+offset_top = 49.0
+offset_right = 769.0
+offset_bottom = 272.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 0
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 61
+text = "game over"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+offset_left = 447.0
+offset_top = 301.0
+offset_right = 685.0
+offset_bottom = 539.0
+theme_override_styles/focus = SubResource("StyleBoxFlat_senko")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_fggoa")
+icon = ExtResource("1_63mhn")
+flat = true
+expand_icon = true

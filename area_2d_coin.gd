@@ -15,6 +15,8 @@ func _on_body_entered(body: Node2D) -> void:
 		# получаем и меняем переменную в сцене
 		#body.position.y -= 300
 		body.num_coin += 1
+
+		# отображаем количество монет
 		body.label_coin.text = "coin " + str(body.num_coin)
 		
 		

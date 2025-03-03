@@ -5,10 +5,13 @@ extends CharacterBody2D
 @onready var camera:Camera2D = $Camera2D
 @onready var label_coin:Label = $"../CanvasLayer/Label_coin"
 @onready var audio_coin:AudioStreamPlayer = $AudioStreamPlayer
+@onready var label_hp:Label = $"../CanvasLayer/Label_hp_player"
 
 
 var num_jump:int = 0
 var num_coin:int = 0
+var num_hp = 100
+var hit_push = false
 
 
 
@@ -38,9 +41,10 @@ func _process(delta: float) -> void:
 		# движение через position
 		#self.position.x -= 400 * delta
 		# движение через velocity
-		velocity.x = -400
+		#velocity.x = -400
 		# переворачиваем спрайт
 		sprite.flip_h = true
+		# анимируем движение игрока
 		sprite.play("anime_run")
 		
 		camera.rotation = -3 * delta
@@ -52,11 +56,12 @@ func _process(delta: float) -> void:
 		velocity.x = 400
 		# переворачиваем спрайт
 		sprite.flip_h = false
+		# анимируем движение игрока
 		sprite.play("anime_run")
 		
 		camera.rotation = 3 * delta
 	
-	else :
+	elif(not hit_push):
 		velocity.x = 0
 		sprite.play("anime_idel")
 
@@ -73,11 +78,13 @@ func _process(delta: float) -> void:
 		
 	
 	
-	
+	# анимации падения и прыжка игрока
 	if(velocity.y > 0):
 		sprite.play("anime_flight")
 	if(velocity.y < 0):
 		sprite.play("anime_jump")
+
+
 	# прыжок игрока через velocity
 	if(Input.is_action_pressed("key_up") and is_on_floor()):
 		velocity.y = -700
@@ -86,6 +93,9 @@ func _process(delta: float) -> void:
 
 	# скорость по y 
 	#print(velocity.y)
+
+
+	# is_on_floor() - возвращает true если сцена касается земли
 
 
 	# включаем гравитацию если игрок не стоит на земле
@@ -107,6 +117,22 @@ func _process(delta: float) -> void:
 
 		# velocity - постоянная скорость объекта
 		velocity.x = 200
+		
+		
+	# отображаем количество hp
+	label_hp.text = "hp "+ str(num_hp)
+	
+	
+	
+	
+	# если hp игрока меньше или ровно нулю тогда меняем сцену
+	if(num_hp <= 0):
+		# get_tree() - дерево сцен
+		#print(get_tree())
+		
+		# меняем сцену
+		get_tree().change_scene_to_file("res://game_over.tscn")
+	
 	
 	
 	
