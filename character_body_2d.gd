@@ -41,7 +41,7 @@ func _process(delta: float) -> void:
 		# движение через position
 		#self.position.x -= 400 * delta
 		# движение через velocity
-		#velocity.x = -400
+		velocity.x = -400
 		# переворачиваем спрайт
 		sprite.flip_h = true
 		# анимируем движение игрока

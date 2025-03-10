@@ -6,6 +6,8 @@ extends CharacterBody2D
 @onready var sprite:AnimatedSprite2D = $AnimatedSprite2D
 
 var near_player = false
+var dead_mushroom = false
+var attack_mushroom = false
 
 
 
@@ -13,15 +15,15 @@ var near_player = false
 func _process(delta: float) -> void:
 	
 	# если игрок рябом двигаемся к нему
-	if(player.position.x < self.position.x - 50 and near_player):
+	if(player.position.x < self.position.x - 50 and near_player and not dead_mushroom and not attack_mushroom):
 		self.velocity.x = -300
 		sprite.flip_h = true
 		sprite.play("run")
-	elif(player.position.x > position.x + 50 and near_player):
+	elif(player.position.x > position.x + 50 and near_player and not dead_mushroom and not attack_mushroom):
 		velocity.x = 300
 		sprite.flip_h = false
 		sprite.play("run")
-	else:
+	elif(not dead_mushroom and not attack_mushroom): 
 		sprite.play("idel")
 		velocity.x = 0
 		
@@ -57,7 +59,9 @@ func _process(delta: float) -> void:
 	
 	
 	
-
+	
+	
+		
 
 	move_and_slide()
 
@@ -83,7 +87,13 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 func _on_area_2d_attack_body_entered(body: Node2D) -> void:
 	# если игрок зашёл в зону атаки тогда толкаем его
 	if(body.name == "CharacterBody2D"):
-		player.num_hp -=200
+		attack_mushroom=true
+		sprite.play("attack")
+		
+		# await - ждет ответ пока ответа нет строки ниже не работают в этой функции
+		# get_tree().create_timer(s).timeout - таймер на s секунд
+		await get_tree().create_timer(0.1).timeout
+		player.num_hp -=20
 		player.velocity.y = -900
 		if(player.position.x < self.position.x):
 			player.velocity.x = -500
@@ -91,12 +101,35 @@ func _on_area_2d_attack_body_entered(body: Node2D) -> void:
 			player.velocity.x = 500
 		player.hit_push = true
 
+		# await - ждет ответ пока ответа нет строки ниже не работают в этой функции
+		# .animation_finished - ждёт пока закончится анимация
+		await sprite.animation_finished
+		attack_mushroom=false
+		
+
 
 
 # гриб умирает если игрок его атакует 
 func _on_area_2d_dead_body_entered(body: Node2D) -> void:
 	if(body.name == "CharacterBody2D"):
+		dead_mushroom = true
+		sprite.play("death")
+
+		# await - ждет ответ пока ответа нет строки ниже не работают в этой функции
+		# .animation_finished - ждёт пока закончится анимация
+		await sprite.animation_finished
 		queue_free()
+		
+		
+
+		# пример работы await
+		#print("a1")
+
+		# await - ждет ответ пока ответа нет строки ниже не работают в этой функции
+		# get_tree().create_timer(s).timeout - таймер на s секунд
+		#await get_tree().create_timer(3).timeout
+		#print("b2")
+		#print("c3")
 
 
 

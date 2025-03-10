@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=4 uid="uid://c1hrlwuxlcase"]
+[gd_scene load_steps=12 format=4 uid="uid://c1hrlwuxlcase"]
 
 [ext_resource type="Script" path="res://level_1_2d.gd" id="1_ghmra"]
 [ext_resource type="Script" path="res://canvas_layer.gd" id="2_cjktf"]
 [ext_resource type="PackedScene" uid="uid://b6fu1rmf3lwu4" path="res://character_body_2d.tscn" id="7_yjkaj"]
+[ext_resource type="PackedScene" uid="uid://cf07ecke17vo5" path="res://parallax_2d.tscn" id="8_5b5c1"]
 [ext_resource type="PackedScene" uid="uid://dkhhdttn65mrv" path="res://static_body_2d.tscn" id="8_6n6r4"]
 [ext_resource type="PackedScene" uid="uid://ciomtubgsvi6s" path="res://area_2d_coin.tscn" id="9_f1g0g"]
 [ext_resource type="Texture2D" uid="uid://1g4jgv0hrflj" path="res://monochrome_tilemap_packed.png" id="11_cda27"]
@@ -486,7 +487,15 @@ text = "hp 888"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="CheckButton" type="CheckButton" parent="CanvasLayer"]
+offset_left = 62.0
+offset_top = 263.0
+offset_right = 198.0
+offset_bottom = 307.0
+text = "полный экран"
+
 [node name="coin_all" type="Node2D" parent="."]
+position = Vector2(323, -106)
 
 [node name="Area2D_coin8" parent="coin_all" instance=ExtResource("9_f1g0g")]
 position = Vector2(4146, 400)
@@ -513,7 +522,7 @@ position = Vector2(817, 437)
 position = Vector2(599, 460)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("7_yjkaj")]
-position = Vector2(3983, 443)
+position = Vector2(463, 377)
 rotation = -0.00593446
 
 [node name="block_land" type="Node2D" parent="."]
@@ -548,4 +557,12 @@ tile_set = SubResource("TileSet_talqx")
 [node name="Mushroom" parent="." instance=ExtResource("12_tgfg5")]
 position = Vector2(4487, 394)
 
+[node name="Mushroom2" parent="." instance=ExtResource("12_tgfg5")]
+position = Vector2(5103, 413)
+
+[node name="Parallax2D" parent="." instance=ExtResource("8_5b5c1")]
+offset = Vector2(0, -150)
+transform = Transform2D(1, 0, 0, 1, 0, -150)
+
 [connection signal="drag_ended" from="CanvasLayer/HSlider" to="CanvasLayer" method="_on_h_slider_drag_ended"]
+[connection signal="pressed" from="CanvasLayer/CheckButton" to="." method="_on_check_button_pressed"]

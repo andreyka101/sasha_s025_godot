@@ -1,6 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://8v4588qu6tf0"]
 
 [ext_resource type="Texture2D" uid="uid://c2vpb5onli61s" path="res://refresh.svg" id="1_63mhn"]
+[ext_resource type="Script" path="res://game_over.gd" id="1_phgdx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fmnqg"]
 bg_color = Color(1, 0.56955, 0.152344, 1)
@@ -8,10 +9,8 @@ bg_color = Color(1, 0.56955, 0.152344, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_senko"]
 bg_color = Color(1, 1, 1, 0)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fggoa"]
-bg_color = Color(0.29, 0.145, 0.145, 0)
-
 [node name="Game_over" type="Node2D"]
+script = ExtResource("1_phgdx")
 
 [node name="Label_background" type="Label" parent="."]
 offset_right = 1157.0
@@ -36,8 +35,12 @@ offset_left = 447.0
 offset_top = 301.0
 offset_right = 685.0
 offset_bottom = 539.0
+pivot_offset = Vector2(125, 119)
 theme_override_styles/focus = SubResource("StyleBoxFlat_senko")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_fggoa")
 icon = ExtResource("1_63mhn")
 flat = true
 expand_icon = true
+
+[connection signal="mouse_entered" from="Button" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Button" to="." method="_on_button_mouse_exited"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

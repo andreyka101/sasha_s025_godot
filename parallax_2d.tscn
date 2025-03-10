@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=3 uid="uid://cf07ecke17vo5"]
+
+[ext_resource type="Texture2D" uid="uid://bu0y4q3vgsi4r" path="res://city 3/1.png" id="1_ul1ux"]
+[ext_resource type="Texture2D" uid="uid://0yfhj3hxvs3e" path="res://city 3/2.png" id="2_x2h8j"]
+[ext_resource type="Texture2D" uid="uid://cr3xge38id8sk" path="res://city 3/3.png" id="3_1luar"]
+[ext_resource type="Texture2D" uid="uid://crc7s25w2gofh" path="res://city 3/4.png" id="4_x0iqf"]
+[ext_resource type="Texture2D" uid="uid://dr3op21315kmt" path="res://city 3/5.png" id="5_mbwfo"]
+
+[node name="Parallax2D" type="ParallaxBackground"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(1354.6, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(678, 382)
+scale = Vector2(2.35185, 2.35185)
+texture = ExtResource("1_ul1ux")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.3, 0.3)
+motion_mirroring = Vector2(1354.6, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(678, 382)
+scale = Vector2(2.352, 2.352)
+texture = ExtResource("2_x2h8j")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.6, 0.6)
+motion_mirroring = Vector2(1354.6, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer3"]
+position = Vector2(678, 382)
+scale = Vector2(2.352, 2.352)
+texture = ExtResource("3_1luar")
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(1354.6, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer4"]
+position = Vector2(678, 382)
+scale = Vector2(2.352, 2.352)
+texture = ExtResource("4_x0iqf")
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(1.6, 1)
+motion_mirroring = Vector2(1354.6, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer5"]
+position = Vector2(678, 382)
+scale = Vector2(2.352, 2.352)
+texture = ExtResource("5_mbwfo")
