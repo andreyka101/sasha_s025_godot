@@ -1,7 +1,7 @@
 [gd_scene load_steps=32 format=3 uid="uid://ci15vnw22ulrf"]
 
 [ext_resource type="Texture2D" uid="uid://cndy5jnotuwdt" path="res://Mushroom/Idle.png" id="1_caha1"]
-[ext_resource type="Script" path="res://mushroom.gd" id="1_ruyn4"]
+[ext_resource type="Script" uid="uid://dungvy65xo0q1" path="res://mushroom.gd" id="1_ruyn4"]
 [ext_resource type="Texture2D" uid="uid://c3w6nsyywtsdd" path="res://Mushroom/Attack.png" id="2_7cfts"]
 [ext_resource type="Texture2D" uid="uid://bsqgxrhlm3lkq" path="res://Mushroom/Death.png" id="2_30ify"]
 [ext_resource type="Texture2D" uid="uid://p4qwbkk5lve0" path="res://Mushroom/Run.png" id="2_g7mjq"]

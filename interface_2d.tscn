@@ -1,8 +1,8 @@
 [gd_scene load_steps=11 format=3 uid="uid://cpquync6cqgir"]
 
-[ext_resource type="Script" path="res://interface_2d.gd" id="1_g8m1i"]
+[ext_resource type="Script" uid="uid://bbnfl6x55174m" path="res://interface_2d.gd" id="1_g8m1i"]
 [ext_resource type="FontFile" uid="uid://dtgvaqnh8efmm" path="res://Daneehand Regular Cyr.ttf" id="1_xthnh"]
-[ext_resource type="Script" path="res://button_2.gd" id="2_bcxt0"]
+[ext_resource type="Script" uid="uid://bijw2wjfc42ui" path="res://button_2.gd" id="2_bcxt0"]
 [ext_resource type="Texture2D" uid="uid://b4qh0cawtr5se" path="res://icon.svg" id="3_svdw0"]
 [ext_resource type="Texture2D" uid="uid://dvohotultkus4" path="res://checked.png" id="4_dme6g"]
 [ext_resource type="Texture2D" uid="uid://bhb021q6o2sk7" path="res://unchecked.png" id="5_6ny37"]
@@ -59,8 +59,8 @@ offset_top = 15.0
 offset_right = 695.0
 offset_bottom = 165.0
 pivot_offset = Vector2(20, 9)
-theme_override_colors/font_focus_color = Color(0.980392, 0.929412, 0.411765, 1)
 theme_override_colors/font_color = Color(0.992157, 0.913725, 0.0627451, 1)
+theme_override_colors/font_focus_color = Color(0.980392, 0.929412, 0.411765, 1)
 theme_override_constants/align_to_largest_stylebox = 18
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_omadh")
@@ -74,9 +74,9 @@ offset_top = 9.0
 offset_right = 1161.0
 offset_bottom = 299.0
 theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 1, 1)
-theme_override_colors/font_focus_color = Color(0.980392, 0.929412, 0.411765, 1)
 theme_override_colors/font_color = Color(0.55095, 0.552776, 1, 1)
+theme_override_colors/font_focus_color = Color(0.980392, 0.929412, 0.411765, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 1, 1)
 theme_override_font_sizes/font_size = 50
 theme_override_icons/icon = ExtResource("3_svdw0")
 text = "click"
